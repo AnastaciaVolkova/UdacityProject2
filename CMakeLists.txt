@@ -1,0 +1,8 @@
+cmake_minimum_required(VERSION 2.8 FATAL_ERROR)
+find_package(gazebo REQUIRED)
+include_directories(${GAZEBO_INCLUDE_DIRS})
+link_directories(${GAZEBO_LIBRARY_DIRS})
+list(APPEND CMAKE_CXX_FLAGS ${GAZEBO_CXX_FLAGS})
+add_library(hello_for_eimer SHARED script/welcome_message.cpp)
+target_link_libraries(hello_for_eimer ${GAZEBO_LIBRARIES})
+
